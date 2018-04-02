@@ -29,8 +29,8 @@
 *.DS_Store
 core_test
 qt_test
-rai_node
-rai_wallet
+lightdag_node
+lightdag_wallet
 slow_test
 
 # IDEs

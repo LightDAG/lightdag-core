@@ -4,11 +4,11 @@
 BUG BOUNTY REPORT INFORMATION
 ---------------------------------------------------
 
-In the interest of further improving the security of the network, we have launched the RaiBlocks Bug Bounty Program.
+In the interest of further improving the security of the network, we have launched the LightDAG Bug Bounty Program.
 
-WARNING! Don't disclose any information for the Raiblocks bug bounty. First, please read the article about our Bug Bounty Program.
+WARNING! Don't disclose any information for the LightDAG bug bounty. First, please read the article about our Bug Bounty Program.
 
-https://www.reddit.com/r/RaiBlocks/comments/7makm7/announcing_the_raiblocks_bug_bounty_program/
+https://www.reddit.com/r/LightDAG/comments/7makm7/announcing_the_lightdag_bug_bounty_program/
 
 ---------------------------------------------------
 NORMAL BUG REPORT INFORMATION
@@ -60,10 +60,10 @@ Briefly describe the problem you are having in a few paragraphs.
 
 <!--
 
-Can you please provide the RaiBlocks logs for further analysis.
+Can you please provide the LightDAG logs for further analysis.
 
-How to find RaiBlocks logs:
+How to find LightDAG logs:
     
-https://github.com/clemahieu/raiblocks/wiki/Log-files
+https://github.com/clemahieu/lightdag/wiki/Log-files
 
 -->

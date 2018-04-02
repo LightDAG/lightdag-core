@@ -1,4 +1,4 @@
-## Raiblocks CI config
+## LightDAG CI config
 
 image: ubuntu:xenial
 

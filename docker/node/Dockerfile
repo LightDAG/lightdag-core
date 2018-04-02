@@ -17,15 +17,15 @@ ADD ./ /tmp/src
 
 RUN mkdir /tmp/build && \
     cd /tmp/build && \
-    cmake /tmp/src -DBOOST_ROOT=${BOOST_ROOT} -DACTIVE_NETWORK=rai_${NETWORK}_network && \
-    make rai_node && \
+    cmake /tmp/src -DBOOST_ROOT=${BOOST_ROOT} -DACTIVE_NETWORK=lightdag_${NETWORK}_network && \
+    make lightdag_node && \
     cd .. && \
-    echo ${NETWORK} > /etc/nano-network
+    echo ${NETWORK} > /etc/lightdag-network
 
 FROM ubuntu:16.04
-COPY --from=0 /tmp/build/rai_node /usr/bin
-COPY --from=0 /etc/nano-network /etc
+COPY --from=0 /tmp/build/lightdag_node /usr/bin
+COPY --from=0 /etc/lightdag-network /etc
 COPY docker/node/entry.sh /entry.sh
-COPY docker/node/config /usr/share/raiblocks/config
+COPY docker/node/config /usr/share/lightdag/config
 RUN chmod +x /entry.sh
 CMD ["/bin/bash",  "/entry.sh"]

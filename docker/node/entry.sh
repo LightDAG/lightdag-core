@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-network="$(cat /etc/nano-network)"
+network="$(cat /etc/lightdag-network)"
 case "${network}" in
         live|'')
                 network='live'
@@ -17,11 +17,11 @@ case "${network}" in
                 ;;
 esac
 
-nanodir="${HOME}/RaiBlocks${dirSuffix}"
-mkdir -p "${nanodir}"
-if [ ! -f "${nanodir}/config.json" ]; then
+lightdag_dir="${HOME}/LightDAG${dirSuffix}"
+mkdir -p "${lightdag_dir}"
+if [ ! -f "${lightdag_dir}/config.json" ]; then
         echo "Config File not found, adding default."
-        cp "/usr/share/raiblocks/config/${network}.json" "${nanodir}/config.json"
+        cp "/usr/share/lightdag/config/${network}.json" "${lightdag_dir}/config.json"
 fi
 
-/usr/bin/rai_node --daemon
+/usr/bin/lightdag_node --daemon

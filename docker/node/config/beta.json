@@ -35,10 +35,10 @@
         },
         "work_peers": "",
         "preconfigured_peers": [
-            "rai-beta.raiblocks.net"
+            "beta.lightdag.net"
         ],
         "preconfigured_representatives": [
-            "xrb_3kbzg73bjsi85scbwnouj44iinrsqtdqphzay1x3pwmgmhkdwg8yjntxff33"
+            "ldg_3kbzg73bjsi85scbwnouj44iinrsqtdqphzay1x3pwmgmhkdwg8yjntxff33"
         ],
         "inactive_supply": "0",
         "password_fanout": "1024",

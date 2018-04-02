@@ -1299,22 +1299,37 @@ rai::public_key rai::wallet::change_seed (MDB_txn * transaction_a, rai::raw_key 
 {
 	store.seed_set (transaction_a, prv_a);
 	auto account = deterministic_insert (transaction_a);
-	auto count (0);
-	for (uint32_t i (1), n (32); i < n; ++i)
+	uint32_t count (0);
+	for (uint32_t i (1), n (64); i < n; ++i)
 	{
 		rai::raw_key prv;
 		store.deterministic_key (prv, transaction_a, i);
 		rai::keypair pair (prv.data.to_string ());
+		// Check if account received at least 1 block
 		auto latest (node.ledger.latest (transaction_a, pair.pub));
 		if (!latest.is_zero ())
 		{
 			count = i;
-			n = i + 32;
+			// i + 64 - Check additional 64 accounts
+			// i/64 - Check additional accounts for large wallets. I.e. 64000/64 = 1000 accounts to check
+			n = i + 64 + (i / 64);
+		}
+		else
+		{
+			// Check if there are pending blocks for account
+			rai::account end (pair.pub.number () + 1);
+			for (auto ii (node.store.pending_begin (transaction_a, rai::pending_key (pair.pub, 0))), nn (node.store.pending_begin (transaction_a, rai::pending_key (end, 0))); ii != nn; ++ii)
+			{
+				count = i;
+				n = i + 64 + (i / 64);
+				break;
+			}
 		}
 	}
 	for (uint32_t i (0); i < count; ++i)
 	{
-		account = deterministic_insert (transaction_a);
+		// Generate work for first 4 accounts only to prevent weak CPU nodes stuck
+		account = deterministic_insert (transaction_a, i < 4);
 	}
 
 	return account;

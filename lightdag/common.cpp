@@ -12,17 +12,20 @@
 #include <ed25519-donna/ed25519.h>
 
 // Genesis keys for network variants
+//Private: EBEFC3C37691F770AB0DFB6EFF7D4699182B46D04CBD8CCD5262AB7B7B0FACE9
+//Public: DA8A656D3A44C78CA364A4314F1A381B8B6C5E373D85A7B4E5EF42B72C09E4D6
+//Account: ldg_3pnceopmnj89jkjpbb3jbwf5i8wdfjh5ghe7nytgdut4pwp1ms8pjns7p93z
 namespace
 {
-char const * test_private_key_data = "34F0A37AAD20F4A260F0A5B3CB3D7FB50673212263E58A380BC10474BB039CE4";
-char const * test_public_key_data = "B0311EA55708D6A53C75CDBF88300259C6D018522FE3D4D0A242E431F9E8B6D0"; // ldg_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpiij4txtdo
+char const * test_private_key_data = "EBEFC3C37691F770AB0DFB6EFF7D4699182B46D04CBD8CCD5262AB7B7B0FACE9";
+char const * test_public_key_data = "DA8A656D3A44C78CA364A4314F1A381B8B6C5E373D85A7B4E5EF42B72C09E4D6"; // ldg_3pnceopmnj89jkjpbb3jbwf5i8wdfjh5ghe7nytgdut4pwp1ms8pjns7p93z
 char const * beta_public_key_data = "0311B25E0D1E1D7724BBA5BD523954F1DBCFC01CB8671D55ED2D32C7549FB252"; // ldg_11rjpbh1t9ixgwkdqbfxcawobwgusz13sg595ocytdbkrxcbzekkcqkc3dn1
 char const * live_public_key_data = "E89208DD038FBB269987689621D52292AE9C35941A7484756ECCED92A65093BA"; // ldg_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3
 char const * test_genesis_data = R"%%%({
 	"type": "open",
-	"source": "B0311EA55708D6A53C75CDBF88300259C6D018522FE3D4D0A242E431F9E8B6D0",
-	"representative": "ldg_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpiij4txtdo",
-	"account": "ldg_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpiij4txtdo",
+    "source": "DA8A656D3A44C78CA364A4314F1A381B8B6C5E373D85A7B4E5EF42B72C09E4D6",
+    "representative": "ldg_3pnceopmnj89jkjpbb3jbwf5i8wdfjh5ghe7nytgdut4pwp1ms8pjns7p93z",
+    "account": "ldg_3pnceopmnj89jkjpbb3jbwf5i8wdfjh5ghe7nytgdut4pwp1ms8pjns7p93z",
 	"work": "9680625b39d3363d",
 	"signature": "ECDA914373A2F0CA1296475BAEE40500A7F0A7AD72A5A80C81D7FAB7F6C802B2CC7DB50F5DD0FB25B2EF11761FA7344A158DD5A700B21BD47DE5BD0F63153A02"
 })%%%";

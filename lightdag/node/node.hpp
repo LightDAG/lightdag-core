@@ -329,7 +329,7 @@ public:
 	uint64_t error_count;
 	lightdag::message_statistics incoming;
 	lightdag::message_statistics outgoing;
-	static uint16_t const node_port = lightdag::lightdag_network == lightdag::lightdag_networks::lightdag_live_network ? 7075 : 54000;
+    static uint16_t const node_port = lightdag::lightdag_network == lightdag::lightdag_networks::lightdag_live_network ? 7075 : 54000;
 };
 class logging
 {
